@@ -38,17 +38,19 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Vero est, quia repellendus asperiores enim eligendi et magnam sit dicta, 
-                        voluptatibus pariatur molestias officia nihil placeat non provident sed voluptate maiores!</p>
+                    <p>A highly motivated and skilled Python/Django developer with one year experience,
+                        seeking a challenging position to leverage my technical skills and 
+                        contribute to the growth and success of an organization in the technology sector. 
+                        Seeking an opportunity that provides ample chances for personal and professional development, 
+                        enabling me to excel and achieve both individual and organizational goals.!</p>
 
                     <div class="tab_titles">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Experience</p>
-                        <p class="tab-links">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
                     </div>
 
-                    <div class="tab-contents">
+                    <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>Backend</span><br>Creating Backend Logic</li>
                             <li><span>Data Science</span><br>Data preprocessing and cleaning</li>
@@ -56,9 +58,43 @@
                         </ul>
                     </div>
 
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023 march-current</span><br>Associate Python Devloper at DZANGOLAB</li>
+                            <li><span>2023 jan-2023 march</span><br>Junior Python Devloper at AAYULOGIC</li>
+                            <li><span>2022 nov-2023 jan</span><br>Python/Django Internship at AAYULOGIC</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022</span><br>BE-IT from Pokhara University</li>
+                            <li><span>2017</span><br>+2 Science from Ratna Jyoti</li>
+                            <li><span>2015</span><br>S.L.C from Jana Mavi</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+    
+<script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+
+</script>
+    
 </body>
 </html>
