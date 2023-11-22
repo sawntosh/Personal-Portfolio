@@ -144,3 +144,10 @@ header-text h1{
     font-size: 14px;
 }
 
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
